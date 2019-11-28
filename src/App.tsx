@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import '../node_modules/uikit/dist/css/uikit.css';
 
 class App extends React.Component<any, any> {
 
@@ -13,11 +14,11 @@ class App extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="Container">
-        <div className="Content">
-          <h3>Claculadora del décimo - Panamá</h3>
+      <div className="uk-flex uk-flex-center">
+        <div className="uk-width-auto uk-text-center uk-padding-large">
+          <h4 className="uk-text-secondary uk-text-bold uk-margin-medium-bottom">Calculadora del décimo</h4>
           <Form appCallback={this.appCallbackFunc} />
-          <div className="Mt-1">
+          <div className="uk-margin-top">
             <hr className="Hr" />
             <Result data={this.state.data} />
           </div>
@@ -49,7 +50,14 @@ class Form extends React.Component<any, any> {
   }
 
   calculate = () => {
-    const { month1, month2, month3, month4 } = this.state;
+    let { month1, month2, month3, month4 } = this.state;
+    if (month1 === '' || month2 === '' || month3 === '' || month4 === '') {
+      month1 = 0;
+      month2 = 0;
+      month3 = 0;
+      month4 = 0;
+    }
+
     let total = parseFloat(month1) + parseFloat(month2) + parseFloat(month3) + parseFloat(month4);
     let decimo: any = (total / 12).toFixed(2);
     let ssocial: any = ((7.25 / 100) * decimo).toFixed(2);
@@ -63,25 +71,25 @@ class Form extends React.Component<any, any> {
     return (
       <div>
         <form className="Form">
-          <div className="Control">
-            <label htmlFor="month1" className="Mr-1" >Mes 1</label>
-            <input id="month1" type="number" value={this.state.month1} onChange={this.handleChange} className="Input-text" />
+          <div className="uk-margin-top">
+            <label htmlFor="month1" className="uk-margin-small-right uk-text-secondary" >Mes 1</label>
+            <input id="month1" type="number" value={this.state.month1} onChange={this.handleChange} className="uk-box-shadow-hover-small uk-input uk-form-width-medium uk-form-small" />
           </div>
-          <div className="Control">
-            <label htmlFor="month2" className="Mr-1" >Mes 2</label>
-            <input id="month2" type="number" value={this.state.month2} onChange={this.handleChange} className="Input-text" />
+          <div className="uk-margin-top">
+            <label htmlFor="month2" className="uk-margin-small-right uk-text-secondary" >Mes 2</label>
+            <input id="month2" type="number" value={this.state.month2} onChange={this.handleChange} className="uk-box-shadow-hover-small uk-input uk-form-width-medium uk-form-small" />
           </div>
-          <div className="Control">
-            <label htmlFor="month3" className="Mr-1" >Mes 3</label>
-            <input id="month3" type="number" value={this.state.month3} onChange={this.handleChange} className="Input-text" />
+          <div className="uk-margin-top">
+            <label htmlFor="month3" className="uk-margin-small-right uk-text-secondary" >Mes 3</label>
+            <input id="month3" type="number" value={this.state.month3} onChange={this.handleChange} className="uk-box-shadow-hover-small uk-input uk-form-width-medium uk-form-small" />
           </div>
-          <div className="Control">
-            <label htmlFor="month4" className="Mr-1" >Mes 4</label>
-            <input id="month4" type="number" value={this.state.month4} onChange={this.handleChange} className="Input-text" />
+          <div className="uk-margin-top">
+            <label htmlFor="month4" className="uk-margin-small-right uk-text-secondary" >Mes 4</label>
+            <input id="month4" type="number" value={this.state.month4} onChange={this.handleChange} className="uk-box-shadow-hover-small uk-input uk-form-width-medium uk-form-small" />
           </div>
         </form>
-        <div className="Mt-1">
-          <button className="Btn" onClick={this.calculate}>Calcular</button>
+        <div className="uk-margin-top">
+          <button className="uk-box-shadow-hover-small uk-button uk-button-default uk-button-small" onClick={this.calculate}>Calcular</button>
         </div>
       </div>
 
@@ -95,15 +103,15 @@ class Result extends React.Component<any, any>{
     let data = this.props.data;
     if (data.calculated) {
       return (
-        <div>
+        <div className="uk-text-right">
           <small>Total: ${data.total}</small> <br />
           <small>Décimo: ${data.decimo}</small> <br />
           <small>Descuento Seguro Social: - ${data.ssocial}</small> <br />
-          <small>Décimo Final: ${data.decimoFinal}</small>
+          <small className="uk-text-bold uk-text-secondary">Décimo Final: ${data.decimoFinal}</small>
         </div>
       )
     } else {
-      return <p> <span role="img" aria-label="wohopee">🤠</span></p>
+      return <p><span role="img" aria-label="wohoopee">🤠</span></p>
     }
   }
 }
