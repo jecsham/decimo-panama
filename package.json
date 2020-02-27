@@ -11,7 +11,7 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
     "typescript": "3.8.2",
-    "uikit": "^3.3.2"
+    "uikit": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
