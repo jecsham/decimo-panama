@@ -11471,10 +11471,10 @@ typescript@4.1.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
   integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
 
-uikit@^3.5.9:
-  version "3.5.9"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.5.9.tgz#50e550f24c3d0fb411e82de0d004659a61fc53b4"
-  integrity sha512-0197WceeBMlCLscsmds6zqL8K3TOtdUCvoHPJEuYqYY2gKa7JttlA6MiyzU0yBPzDlcawXF2TdOmQ/DWy6ZDEw==
+uikit@^3.5.10:
+  version "3.5.10"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.5.10.tgz#d7165a5f045a5f5af4dc9c3c670fbb08c9ae8a6d"
+  integrity sha512-X+OUD02atmks1yYG9C3FSo1EcQ0xfV0+NCHspTShd2uMKYcC5LiMq6o/MyxBxx2bQSeKXh6Kh8TqQ/v4LWI4Tg==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
